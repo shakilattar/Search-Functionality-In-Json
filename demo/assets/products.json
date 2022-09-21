@@ -1,0 +1,36 @@
+[
+  {
+    "p_name": "Apple",
+    "p_id": 1,
+    "p_cost": 30,
+    "p_availability": 1,
+    "p_details": "Imported from Swiss",
+    "p_category": "Premium",
+    "p_imageUrl": "https://www.collinsdictionary.com/images/full/apple_158989157.jpg"
+  },
+  {
+    "p_name": "Mango",
+    "p_id": 2,
+    "p_cost": 50,
+    "p_availability": 1,
+    "p_details": "Farmed at Selam",
+    "p_category": "Tamilnadu",
+    "p_imageUrl": "https://farm2aam.com/wp-content/uploads/2021/02/chemical-mango.png"
+  },
+  {
+    "p_name": "Bananna",
+    "p_id": 3,
+    "p_cost": 5,
+    "p_availability": 0,
+    "p_imageUrl": "https://www.meme-arsenal.com/memes/e81bb56ebf18fb5ab21877fce1a0324b.jpg"
+  },
+  {
+    "p_name": "Orange",
+    "p_id": 4,
+    "p_cost": 25,
+    "p_availability": 1,
+    "p_details": "from Nagpur",
+    "p_category": "Premium",
+    "p_imageUrl": "https://5.imimg.com/data5/EE/ER/MY-27568370/fresh-orange-500x500.png"
+  }
+]
