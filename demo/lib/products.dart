@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Products {
   String? pName;
   int? pId;
