@@ -4,6 +4,6 @@ import './home_screen.dart';
 void main() {
   runApp(MaterialApp(
     theme: ThemeData(),
-    home: HomeScreen(),
+    home: const HomeScreen(),
   ));
 }

@@ -32,14 +32,14 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     query = query.toLowerCase();
-    print(query);
+    //print(query);
     List result = [];
-    products.forEach((p) {
+    for (var p in products) {
       var name = p["p_name"].toString().toLowerCase();
       if (name.contains(query)) {
         result.add(p);
       }
-    });
+    }
 
     products = result;
     setState(() {});
@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Yebelo'),
+        title: const Text('Yebelo'),
       ),
       body: Column(
           mainAxisSize: MainAxisSize.max,
@@ -63,12 +63,12 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              margin: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   TextFormField(
                     controller: controller,
                     onChanged: search,
@@ -76,15 +76,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       hintText: "Search",
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(4.0)),
-                      focusedBorder: OutlineInputBorder(
+                      focusedBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.black)),
-                      prefixIcon: Icon(Icons.search),
+                      prefixIcon: const Icon(Icons.search),
                       suffixIcon: IconButton(
                         onPressed: () {
                           controller.text = '';
                           search(controller.text);
                         },
-                        icon: Icon(Icons.clear),
+                        icon: const Icon(Icons.clear),
                       ),
                     ),
                   ),
@@ -100,12 +100,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   ElevatedButton(
                     onPressed: () {},
-                    child: Text('Filter'),
+                    child: const Text('Filter'),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _listView(products),
           ]),
     );
@@ -118,23 +118,23 @@ Widget _listView(products) {
       itemCount: products.length,
       itemBuilder: (context, index) {
         var product = products[index];
-        var _mediaQuery = MediaQuery.of(context);
-        return Container(
-          height: _mediaQuery.size.height * 0.1,
+        var mediaQuery = MediaQuery.of(context);
+        return SizedBox(
+          height: mediaQuery.size.height * 0.1,
           child: ListTile(
             leading: Image.network(
               product['p_imageUrl'].toString(),
             ),
             title: Text(
               product['p_name'],
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
               ),
             ),
             subtitle: Text(
               "Cost: ₹${product['p_cost']}",
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),
